@@ -1,0 +1,16 @@
+{
+    "adult": true,
+    "age": 26,
+    "fName": "Ibrahim",
+    "fullName": [
+        "Ibrahim",
+        "Musa",
+        "Suleiman"
+    ],
+    "mName": "Musa",
+    "phone Numbers": {
+        "Phone1": "08123456776",
+        "Phone2": "07087654334"
+    },
+    "sName": "Suleiman"
+}
