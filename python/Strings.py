@@ -77,3 +77,10 @@ print(y.strip("bala"))
 x = "This is a statement"
 n = x.lower().count('a', 0, len(x))     #from 0 index to len(x) index
 print(n)
+
+
+# Ignore case (Case insensitive ) using 'casefold()' method
+name = input("Enter your name: ")
+if name.casefold() == "IbRahim".casefold():
+    print("The name is correct")
+else: print("Incorrect name entered: " + name)

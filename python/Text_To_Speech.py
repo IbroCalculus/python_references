@@ -1,6 +1,6 @@
 
 import pyttsx3
-import time
+import time_ref
 
 #Works offline
 
@@ -77,5 +77,6 @@ def advanceUsage():
     engine.runAndWait()
 
 
-advanceUsage()
+basicUsage()
+# advanceUsage()
 

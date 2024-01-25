@@ -10,9 +10,6 @@ rate = engine.getProperty('rate')
 print(rate)
 engine.setProperty('rate', 190)
 
-#Classes - is a blueprint for creating objects
-#NB: Attributes(Properties) and Behaviours(methods)
-
 class Phone:
 
     def __init__(self, brand, price):

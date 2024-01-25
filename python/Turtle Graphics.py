@@ -1,5 +1,5 @@
 import turtle
-import time
+import time_ref
 
 def runTurtle():
     turtle.title("This is the title")

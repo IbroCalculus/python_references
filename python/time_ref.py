@@ -1,4 +1,4 @@
-import time
+import time_ref
 
 #The time.time() (NOT time.clock() which is deprecated) function allows us measure the time of parts of a program's execution. returns a floating point value representing elapsed time in seconds
 #The time.sleep() function gives delay

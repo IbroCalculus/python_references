@@ -1,7 +1,7 @@
 #check pyautogui document @pyautogui.readthedocs.io
 
 import  pyautogui as pya
-import time
+import time_ref
 
 DOWN = pya.keyDown('ctrl')
 

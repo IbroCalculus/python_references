@@ -37,7 +37,7 @@ for i in range(5):
 print("\nChoices")
 number_list = ["One", "Two", "Three", "Four", "Five"]
 for i in range(5):
-    print(random.choices(number_list, k=3))       #Returns random group of elements from the list (i.e Repetitions allowed)
+    print(random.choices(number_list, k=3))       #Returns random group of elements from the list (i.e. Repetitions allowed)
 
 print("\nSample")
 number_list = ["One", "Two", "Three", "Four", "Five"]

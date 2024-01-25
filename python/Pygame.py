@@ -1,5 +1,5 @@
 import pygame as p
-import time
+import time_ref
 
 p.mixer.init()              #Initialize the mixer, FIRST THING TO DO
 

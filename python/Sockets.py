@@ -1,5 +1,5 @@
 import socket
-import time
+import time_ref
 
 #NB: Alternative to reading contents from the internet is by using the urllib module.
 

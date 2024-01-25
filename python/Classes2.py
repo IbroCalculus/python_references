@@ -1,9 +1,8 @@
-
 class Employee:
+    salary = 5000       # Varaibles are static by default
+    salary_increment = 1.05  # .05 (5%) increment
 
-    salary_increment = 1.05     #.05 (5%) increment
-
-    #CREATE A CONSTRUCTOR
+    # CREATE A CONSTRUCTOR
     def __init__(self, fName, sName, eMail, salary):
         self.fName = fName
         self.sName = sName
@@ -21,34 +20,28 @@ class Employee:
     def apply_increment(self):
         self.salary = int(self.salary * self.salary_increment)
 
+
+    # ======================== To define a static method ====================
+    @staticmethod
+    def personDetail2():
+        return f'Salary: {Employee.salary}'
+
+    @classmethod
+    def anotherStaticMethod(cls):
+        print("This is another way of declaring a static method!")
+
+    # ======================== toString ====================
+    def __str__(self):
+        return f'FIRSTNAME: {self.fName}, SURNAME: {self.sName}, AGE: {self.age}'
+
+
+
 emp_1 = Employee("Ibrahim", "Suleiman", "ibsuleiman9@gmail.com", "$95,0000")
 emp_2 = Employee("Musa", "Aboy", "ibrahimsmusa9@gmail.com", "$115,000")
 
-'''
- INSTEAD OF:
-emp_1.fName = "Ibrahim"
-emp_1.sName = "Suleiman"
-emp_1.eMail = "ibsuleiman9@gmail.com"
-emp_1.salary = "$95,000"
 
-emp_2.fName = "Musa"
-emp_2.sName = "Aboy"
-emp_2.eMail = "ibrahimsmusa9@gmail.com"
-emp_2.salary = "$115,000"
-'''
-
-print(emp_1.eMail)
-print(emp_2.eMail)
-print(f'You are Welcome Mr {emp_1.fullName}')
-
-#CALLING A METHOD INSIDE A CLASS
+# CALLING A METHOD INSIDE A CLASS
 print('\nFull Details1')
 emp_1.fullDetails()
 print('\nFull Details2')
 Employee.fullDetails(emp_2)
-print("-------------\n")
-
-print(f'Without salary increment: {emp_1.salary}')
-#emp_1.apply_increment()
-print(f'After salary increment: {emp_1.salary}')
-print("-----------------\n")

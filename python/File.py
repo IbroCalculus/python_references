@@ -59,7 +59,8 @@ with open('FileTextFile2.txt', 'w') as f:
 print('CONTENT2:')
 with open('FileTextFile2.txt', 'r') as f:
     x = f.readlines()   #Returns list of String by lines
-    print(x, end='')
+    for content in x:
+        print(content.rstrip())
 
 
 print('\n\nCONTENT3:')

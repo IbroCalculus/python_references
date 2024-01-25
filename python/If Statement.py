@@ -1,6 +1,6 @@
 
 import  pyttsx3
-import time
+import time_ref
 import winsound
 
 #Ternary if statement.  Use with only one if statement

@@ -11,7 +11,7 @@ print(f'LIST OF ACTIVE THREADS: {thd.enumerate()}')
 
 
 #===================== EXAMPLE: RUN 3 TASKS CONCURRENTLY ==============
-import  time
+import  time_ref
 def firstTimer():
     for i in range(1,10):
         time.sleep(1)
