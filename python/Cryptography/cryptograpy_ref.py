@@ -1,4 +1,5 @@
 # I used this module in the project 'password_manager'. CHECK its: password_manager.py
+# The project includes saving and retrieving the encrypted and decrypted data respectively, in a text file.
 
 from cryptography.fernet import Fernet
 

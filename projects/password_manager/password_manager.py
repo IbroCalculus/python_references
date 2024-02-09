@@ -1,8 +1,6 @@
 import time
 from cryptography.fernet import Fernet
 
-
-
 # NB: The key changes on each run. Hence, only need to run once and store the generated key in a .key file, then comment out this block of code
 '''
 def generate_and_write_key():
@@ -11,19 +9,26 @@ def generate_and_write_key():
         key_file.write(generated_key)
 generate_and_write_key()
 '''
+
+
 def load_key():
     with open("crypt_key.key", 'rb') as key_file:
         key = key_file.read()
     return key
 
-master_pswd = input("What is the master password?: ")
 
-if master_pswd != "Admin123":
-    print("Incorrect master password, can't go further. Run and try again")
-    quit()
+while True:
+    master_pswd = input("What is the master password?: ")
+    if master_pswd.casefold() == 'q'.casefold():
+        quit()
+    elif master_pswd != "Admin123":
+        print("Incorrect master password, can't go further. Run and try again or press q to quit")
+    else:
+        break
 
 key = load_key()
 cipher_suite = Fernet(key)
+
 
 def add():
     name = input("Account name: ")
