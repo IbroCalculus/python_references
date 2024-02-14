@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body>
+    <h1>Home Page!</h1>
+    <p>Hello {{username}}, you are welcome!</p>
+    <p>Age stated is: {{userage}}</p>
+    <p>Stated salary = {{salary}}</p>
+    <hr>
+    {% for i in range(5) %}
+        <p>Iteration Number {{i}} </p>
+    {% endfor %}
+    <hr>
+    {%  for x in people %}
+        {% if x == "Ibrahim" %}
+            <p>You are welcome {{x}}</p>
+        {% elif x == "Kate" %}
+            <p>This is {{x}}</p>
+        {% else %}
+            <p>{{x}}</p>
+        {% endif %}
+        
+    {% endfor %}
+    <hr>
+
+</body>
+</html>
