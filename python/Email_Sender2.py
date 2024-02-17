@@ -1,3 +1,8 @@
+
+
+# NOTE: I wanted something similar to Email.Sender.py, but this did not work. Rather, Check Email_Sender3.py
+
+
 from email.message import EmailMessage
 import ssl
 import smtplib
