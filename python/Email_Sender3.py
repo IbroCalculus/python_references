@@ -53,4 +53,4 @@ def send_outlook_email(subject, to, cc, body, display=False):
 
 # Example usage:
 # send_outlook_email('NEW SAMPLE Mail', 'example@gmail.com', 'lomih55502@oprevolt.com', 'HELLO, this is a test email.')
-send_outlook_email('NEW SAMPLE Mail', 'ibsuleiman9@gmail.com', 'lomih55502@oprevolt.com', 'HELLO, this is a test email.', True)
+send_outlook_email('NEW SAMPLE Mail', 'someone@gmail.com', 'lomih55502@oprevolt.com', 'HELLO, this is a test email.', True)
