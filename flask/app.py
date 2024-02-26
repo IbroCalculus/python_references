@@ -1,16 +1,16 @@
 from flask import Flask, redirect, url_for, render_template
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static')
 
 @app.route("/")
 def home():
-    return "Hello! This is the main page <h1>HELLO</h1>"
+    return "Helloooooo! This is the main page <h1>HELLO</h1>"
 
 
 # =========================== PATH PARAMETER (http://127.0.0.1:5000/Ibrahim) ===========================
 @app.route("/<name>/")
 def user(name):
-    return f"Hello {name}, you are welcome to this program"
+    return f"Hello {name} Calculus, you are welcome to this program"
 
 
 # ============================== REDIRECT =============================

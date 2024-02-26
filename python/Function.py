@@ -32,3 +32,34 @@ def fullID(**kwargs):
     print(f'FIRST NAME: {firstName}    \nLAST NAME: {lastName}')
 
 fullID(fName="Ibrahim", lName="Suleiman")
+
+
+# ================================ FIRST ORDER FUNCTION ============================
+def add(n1, n2):
+    return n1 + n2
+
+
+def multiply(n1, n2):
+    return n1 * n2
+
+
+def calculate(calc_function, n1, n2):
+    return calc_function(n1, n2)
+
+
+resut_add = calculate(add, 2, 3)
+resut_multiply = calculate(multiply, 2, 3)
+
+print(f'Result_add: {resut_add}')
+print(f'Result_multiply: {resut_multiply}')
+
+
+# ================================ NESTED FUNCTIONS ============================
+def outter():
+    print("I am outter function")
+
+    def inner():
+        print("I am inner function")
+    inner()
+
+outter()
