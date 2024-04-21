@@ -1,0 +1,11 @@
+{% extends "base_template.html" %}
+
+{% block body_content%}
+
+<h1>This is using the extended base template</h1>
+<p>This is a paragraph</p>
+{% for i in range(5) %}
+<p>Iteration number {{i}}</p>
+{% endfor %}
+
+{% endblock %}

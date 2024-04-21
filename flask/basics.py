@@ -17,3 +17,9 @@ if __name__ == "__main__":
 # IMAGE: Check index.html to see how image was passed
 
 # CSS STYLESHEET: Check index.html header section to see how to link a css file
+
+# DATABASE: pip install flask-sqlalchemy
+# Check flask2/app.py and flask3/app for usage
+
+# To extract the routes into a single file, create a package inside the application titled __init__.py.
+# ie Created it inside a folder 'app' from the root directory. This file is always ran without calling. Check it.

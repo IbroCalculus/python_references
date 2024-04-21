@@ -1,4 +1,4 @@
-from flask import Flask, redirect, url_for, render_template
+from flask import Flask, redirect, url_for, render_template, request
 
 app = Flask(__name__, static_url_path='/static')
 
@@ -11,6 +11,39 @@ def home():
 @app.route("/<name>/")
 def user(name):
     return f"Hello {name} Calculus, you are welcome to this program"
+
+
+@app.route("/blog/<int:blogId>")                    # Parameter value must be integer
+def blog(blogId):
+    return f"This is blog with id: {blogId}"
+
+
+@app.route("/user/", methods=["GET", "POST"])
+def user1():
+    if request.method == "POST":
+        name = request.form.get("name")
+        email = request.form.get("email")
+        print(f"Name: {name} Email: {email}")
+        return request.form.get("email")
+        # return f"<h1>Create New User</h1>"
+    else:
+        return f"<h1>All users</h1>"
+
+
+@app.route("/user/<int:id>", methods=["DELETE", "PUT"])
+def user_id(id):
+    if request.method == "DELETE":
+        return f"<h1> Delete User with id: {id}</h1>"
+    elif request.method == "PUT":
+        return f"<h1> Update User with id: {id} </h1>"
+    else:
+        return f"This method is not supported"
+
+@app.route("/user/<int:userId>")
+def user2(userId):
+    return f"User with userId = {userId}"
+
+
 
 
 # ============================== REDIRECT =============================
@@ -41,12 +74,15 @@ def index():
 
 # Passing dynamic information in the rendered html file
 # http://127.0.0.1:5000/index_page/Ibrahim/56/
-@app.route("/index_page/<name>/<age>/")
+@app.route("/index_page/<name>/<int:age>/")
 def index2(name, age):
     return render_template("index2.html", username=name, userage=age, salary=5000, people=["Ibrahim","Musa","Salim","Kate"])
 
 
-
+# ----------------------------------------------------
+@app.route("/user/create/")
+def create():
+    return render_template("user/create.html")
 
 # ======================== TEMPLATE INHERITANCE (ie Share a navbar across multiple html files) ======================
 
@@ -54,3 +90,6 @@ def index2(name, age):
 @app.route("/index_page3")
 def index3():
     return render_template("index3.html")
+
+if __name__ == "__main__":
+    app.run(debug=True)

@@ -1,0 +1,15 @@
+{% include "base_header.html" %}    <!-- Using extends would have been better. Check index2.html for both usage examples -->
+{% block title %}INDEX PAGE{% endblock %}
+
+    <h1>Home Page!</h1>
+    <p>Hello {{name}}</p>
+
+    {% for i in range(10) %}
+        {% if i == 5 %}
+            <p>THE VALUE OF I = 5</p>
+        {% else %}
+            <p>Iteration number {{i}}</p>
+        {% endif %}
+    {% endfor %}
+
+{% include "base_footer.html" %}

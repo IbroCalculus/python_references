@@ -12,7 +12,7 @@ def decorator_function(function):
         function()
     return wrapper_function
 
-# ========== Example 1; (Add two seconds delay two each of these three functions before their print statement is called) ==============
+# ========== Example 1; (Add one second delay to each of these three functions before their print statement is called) ==============
 # 1. The decorator function:
 def add_delay_decorator(function):
     def add_delay():
