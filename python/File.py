@@ -18,7 +18,7 @@ print(statement)
 #myFileObj = open("myFile.txt", 'r')
 #myFileObj.close()
 
-#If second argument is not present, it defaults to a read file. i.e myFileObj = open('myFile.txt') == open('myFile.txt', 'r')
+#If second argument is not present, it defaults to a read file. i.e. myFileObj = open('myFile.txt') == open('myFile.txt', 'r')
 
 
 #CREATE AND WRITE TO A FILE
