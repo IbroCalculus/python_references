@@ -1,15 +1,14 @@
 from fastapi import FastAPI, HTTPException, Path
 from typing import Union
 
-
-
+from starlette import status
 
 app = FastAPI()
 
 
 # ========= 1. Simple get request ==========
 # http://127.0.0.1:8000/
-@app.get("/")
+@app.get("/", status_code=status.HTTP_200_OK)
 def root():
     return {"Hello": "World"}
     # return "It can simply be a string of text"

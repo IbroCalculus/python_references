@@ -21,6 +21,16 @@ class Book(BaseModel):
     description: Optional[str] = ""  # description: Optional[str] = Field(title:"Description of the book", min_length=1, max_length=50)
     rating: int = Field(gt=0)
 
+    class Config:
+        json_schema_extra: {
+            "example": {
+                "title": "titleOne",
+                "author": "authorOne",
+                "description": "descriptionOne",
+                "rating": 6
+            }
+        }
+
 BOOKS: List[Book] = [
     Book(
         title="titleOne",
@@ -39,6 +49,7 @@ BOOKS: List[Book] = [
 # ============ POST operation ===========
 @app.post("/create-book/")
 async def createBook(book: Book):
+    the_book = Book(**book.model_dump())      # RETURNS OUTPUT AS SUCH: id=5 title='Title Five' author='Author Five' category='Category Five' rating=6
     BOOKS.append(book)
     return BOOKS
 
