@@ -1,3 +1,4 @@
-from uuid import uuid4
 
-print(f"Generated uuid = {uuid4()}")
+x = ["A","B","C","D","E"]
+print(x.index("C"))
+

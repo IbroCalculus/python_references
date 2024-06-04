@@ -1,6 +1,8 @@
-from fastapi import FastAPI
 from typing import Optional
+
+from fastapi import FastAPI, Body
 from pydantic import BaseModel
+from starlette import status
 
 app = FastAPI()
 
@@ -22,7 +24,7 @@ BOOKS = {
     'book_2': {'title': 'Title two', 'author': 'Author two'},
     'book_3': {'title': 'Title three', 'author': 'Author three'},
     'book_4': {'title': 'Title four', 'author': 'Author four'},
-    'book_5': {'title': 'Title five', 'author': 'Author fivee'}
+    'book_5': {'title': 'Title five', 'author': 'Author five'}
 }
 
 
@@ -61,7 +63,7 @@ async def read_some_books(skip_book: Optional[str] = None):  # The value of skip
 
 # 1. -------------------------- Using path parameter -------------------
 # http://127.0.0.1:8000/create-new-book/BookOfTech/IbrahimCalculus
-@app.post('/create-new-book/{book_title}/{book_author}')
+@app.post('/create-new-book/{book_title}/{book_author}', status_code=status.HTTP_201_CREATED)
 async def create_new_book(book_title, book_author):
     new_book_title = f"book_{len(BOOKS) + 1}"
     BOOKS[new_book_title] = {'title': book_title, 'author': book_author}
@@ -77,7 +79,7 @@ async def create_new_books2(book_title, book_author: Optional[str] = "JohnDoe"):
     return BOOKS
 
 
-# 3. ---- Using request body -------
+# 3. ---- Using request body (Method 1: BaseModel) -------
 class Item(BaseModel):
     name: str
     price: float
@@ -93,11 +95,21 @@ def create_item(item_id: int, item: Item):
     return inventory[item_id]
 
 
+# 4. ---- Using request body (Method 1: Body) -------
+# http://127.0.0.1:8000/create_book/        Pass Body: 'book_10': {'title': 'Title Ten', 'author': 'Author Ten'}
+@app.post("/create_book/")
+def create_booky(new_book: Body()):
+    BOOKS.append(new_book)
+    return BOOKS
+
+
+
+
 # ========================================= UPDATE ==================================
 
 # 1. ---------------------- UPDATE (Path parameter) ----------------------
 # http://127.0.0.1:8000/update-book/book_2/TheFrail/CalculusMBS
-@app.put('/update-book/{book_id}/{book_title}/{book_author}')
+@app.put('/update-book/{book_id}/{book_title}/{book_author}', status_code=status.HTTP_204_NO_CONTENT)
 async def update_book(book_id: str, book_title: str, book_author: str):
     BOOKS[book_id] = {'title': book_title, 'author': book_author}
     return BOOKS
@@ -113,7 +125,7 @@ async def update_book2(book_id: str, book_title: str, book_author: str):
 
 # ========================================= DELETE ==================================
 # http://127.0.0.1:8000/delete_book/book_3     (Path parameter)
-@app.delete('/delete_book/{book_id}')
+@app.delete('/delete_book/{book_id}', status_code=status.HTTP_204_NO_CONTENT)
 async def delete_book(book_id):
     del BOOKS[book_id]
     return BOOKS

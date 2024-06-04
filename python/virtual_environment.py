@@ -3,5 +3,5 @@
 # python3 -m venv samplevirtual-env     (Where samplevirtual-env is the name of the virtual environment)
 # Activate it by: samplevirtual-env\Scripts\activate.bat       (IN WINDOWS)
 # Activate it by: source samplevirtual-env/bin/activate       (IN UBUNTU. NB: Source is a keyword)
-
+# Deactivate it by: deactivate
 # ==== sudo apt install python3-fastapi (This is how to use pip install in Ubuntu)
