@@ -10,7 +10,7 @@ import os
 
 def send_email():
     sender_email = input("SENDER EMAIL: ")
-    sender_password = input("PASSWORD: ")
+    sender_password = input("PASSWORD: ")           # msat bqjl jnrv ltbq
     receiver_email = input("RECEIVER EMAIL: ")
     subject = input("SUBJECT: ")
     body = input("BODY: ")
