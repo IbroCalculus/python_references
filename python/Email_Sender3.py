@@ -1,3 +1,6 @@
+# This is for Outlook using win32
+
+
 # import os
 # import win32com.client  #(NB: pip install pywin32, FOR THIS TO WORK)
 #
