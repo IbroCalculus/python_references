@@ -64,8 +64,8 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-username = "coolgirls@cihpng.org"
-password = "CihpLock@24"
+username = "aaaaa@outlook.com"
+password = "password"
 mail_from = "coolgirls@cihpng.org"
 mail_to = "ibsuleiman9@gmail.com"
 mail_subject = "Test Subject"
