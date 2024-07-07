@@ -1,6 +1,6 @@
 
 
-#Similar reference files: Urllib1.py and Requests.py. Contains urllib and requests module
+#Similar reference files: Urllib1.py and Requests Module.py. Contains urllib and requests module
 
 #using urllib request, There's also requests module, check Internet2
 from urllib import  request
