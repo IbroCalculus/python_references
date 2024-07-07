@@ -1,5 +1,5 @@
 
-#Similar reference files: Urllib and Requests.py. Contains urllib and requests module
+#Similar reference files: Urllib and Requests Module.py. Contains urllib and requests module
 
 import urllib.request, urllib.response, urllib.parse, urllib.error
 

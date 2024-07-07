@@ -15,7 +15,7 @@ cur.execute(""" CREATE TABLE IF NOT EXISTS employee_records(
 cur.execute(""" CREATE TABLE IF NOT EXISTS admin_records(
     ID INT PRIMARY KEY NOT NULL,
     NAME TEXT NOT NULL,
-    DIVISION TEXT NOT NULL,
+    DIVISION TEXT NOT NULL,q
     STARS INT NOT NULL
 )
 """)
