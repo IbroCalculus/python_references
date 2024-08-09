@@ -2,6 +2,7 @@
 #CHECK: Python Full Course: 5:40:00
 
 import threading as thd
+import time
 
 #============= VIEW ACTIVE THREADS ====================
 print(f'NUMBER OF ACTIVE THREADS: {thd.active_count()}')

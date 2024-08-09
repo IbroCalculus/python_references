@@ -1,7 +1,22 @@
 from enum import Enum, auto
 
 
-class State(str, Enum):                             # class State(str, Enum):    The values will be string, instead of integers, ie "1"
+class Colors(str, Enum):
+    red = 'Red'
+    green = 'Green'
+    blue = 'Blue'
+
+
+def choose_color(colorValue: Colors):
+    print(f"The selected color is {colorValue.value}")
+
+
+choose_color(Colors.red)  # Output: The selected color is Red
+# choose_color('black')   # Output: This will give an error.
+
+# ----------------------------------------------------
+
+class State(str, Enum):  # class State(str, Enum):    The values will be string, instead of integers, ie "1"
     PLAYING = auto()  # or PLAYING = 1
     PAUSED = auto()
     GAME_OVER = auto()

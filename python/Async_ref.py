@@ -16,38 +16,36 @@ await: The await keyword is used inside an async function to call another async 
 '''
 
 
-async def say_hello():
-    print('Hello, World!')
-    await asyncio.sleep(2)
-    await loopThrough()
+async def timerX():
     for i in range(5):
-        print(f"Hello {i}")
-        await asyncio.sleep(1)
+        print(f'Iteration: {i + 1}')
+        time.sleep(1)
 
 
-async def loopThrough():
-    for i in range(5):
-        print(f"Iteration number {i}")
-        await asyncio.sleep(1)
-
-asyncio.run(say_hello())
+async def countX():
+    await timerX()
+    print('Count completed')
 
 
+asyncio.run(countX())
 
 print("===================== THESE BELOW WILL RUN CONCURRENTLY ==========================")
 
-async def task1():
+
+async def timerX():
     for i in range(5):
-        await asyncio.sleep(1)
-        print(f"Task 1 - Iteration {i + 1}")
+        print(f'Iteration: {i + 1}')
+        await asyncio.sleep(1)  # time.sleep(1) Will not work, it is a blocking call, it blocks the entire thread, preventing other threads from running concurrently
 
 
-async def task2():
-    for i in range(10):
-        await asyncio.sleep(1)
-        print(f"Task 2 - Iteration {i + 1}")
+async def countX():
+    for i in range(5):
+        print(f'Iteration2: {i + 1}')
+        await asyncio.sleep(1)  # time.sleep(1)
+
 
 async def main():
-    await asyncio.gather(task1(), task2())
+    await asyncio.gather(timerX(), countX())
+
 
 asyncio.run(main())
