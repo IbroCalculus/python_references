@@ -21,8 +21,7 @@ Base = declarative_base()
 # ========= IF DB IS SQLite ============
 URL_DATABASE = 'sqlite:///./blogapplication.db'  # Once api run, will create db in same directory
 
-engine = create_engine(
-    URL_DATABASE)  # For SQLite database, REMOVE: connect_args={"check_same_threads": False} in mysql above
+engine = create_engine(URL_DATABASE)  # For SQLite database, REMOVE: connect_args={"check_same_threads": False} in mysql above
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
