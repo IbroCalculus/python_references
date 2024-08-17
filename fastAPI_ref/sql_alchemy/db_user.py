@@ -1,4 +1,4 @@
-from sqlalchemy.orm import Session
+from sqlalchemy.orm.session import Session
 from schemas import UserBase
 from db.models import DbUser
 from hash import Hash

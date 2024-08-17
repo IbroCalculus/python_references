@@ -1,7 +1,7 @@
 """
 1. pip install sqlalchemy pymysql (pymysql is used to connect to mySql database)
-# Create a folder, db and add the below files in it
-2. Create 'database_conn.py' file within db folder. Contains all conections strings to enable SQL connection.
+# Create a folder, 'db' and add the below files in it
+2. Create 'database.py' file within db folder. Contains all connections strings to enable SQL connection.
 3. Create models.py file withing db folder.
 4. Use in db_main.py file and run (You will observe .db created if using sqlite blogapplication.db
 5. Create schemas.py file
