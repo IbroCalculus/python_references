@@ -7,7 +7,7 @@ database_filename = 'test.db'
 DATABASE_URL = f'sqlite:///./{database_filename}'
 
 # IF MYSQL
-# pip install pymysql OR pip install pip install mysql-connector-python (ie: mysql+mysqlconnector://<username>:...
+# pip install pymysql OR pip install mysql-connector-python (ie: mysql+mysqlconnector://<username>:...
 # DATABASE_URL = "mysql+pymysql://<username>:<password>@<host>/<database_name>" If mysql
 # import os
 # DATABASE_URL = f"mysql+pymysql://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}@{os.getenv('DB_HOST')}/{os.getenv('DB_NAME')}"

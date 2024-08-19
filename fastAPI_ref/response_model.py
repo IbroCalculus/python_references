@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, status
 from sqlmodel import Field, Session, SQLModel, create_engine, select
 
 
@@ -9,7 +9,7 @@ class Hero(SQLModel, table=True):
     age: int | None = Field(default=None, index=True)
 
 
-sqlite_file_name = "database2.db"
+sqlite_file_name = "databaseX.db"
 sqlite_url = f"sqlite:///{sqlite_file_name}"
 
 connect_args = {"check_same_thread": False}
@@ -22,19 +22,13 @@ def create_db_and_tables():
 
 app = FastAPI()
 
+# Use the response_model to tell FastAPI the schema of the data you want to send back and have awesome data APIs
 
 
-@app.post("/heroes/", response_model=Hero)
+@app.post("/heroes/", response_model=Hero)      # Data validation; enforce response type must be Hero, instead of default string
 def create_hero(hero: Hero):
     with Session(engine) as session:
         session.add(hero)
         session.commit()
         session.refresh(hero)
         return hero
-
-
-@app.get("/heroes/", response_model=list[Hero])
-def read_heroes():
-    with Session(engine) as session:
-        heroes = session.exec(select(Hero)).all()
-        return heroes
