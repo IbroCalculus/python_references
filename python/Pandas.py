@@ -1,3 +1,5 @@
+# pip install pandas openpyxl
+
 import pandas as pd
 
 # ========= LOADING/READING THE DATASET =========
