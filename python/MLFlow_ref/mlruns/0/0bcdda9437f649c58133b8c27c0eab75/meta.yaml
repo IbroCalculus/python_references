@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/0/0bcdda9437f649c58133b8c27c0eab75/artifacts
+deleted_time: 1725748110807
+end_time: 1725747932266
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: 0bcdda9437f649c58133b8c27c0eab75
+run_name: persistent-elk-860
+run_uuid: 0bcdda9437f649c58133b8c27c0eab75
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1725747932226
+status: 4
+tags: []
+user_id: ibrahimsuleiman
