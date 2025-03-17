@@ -1,6 +1,6 @@
 
 # FastApi uses the uvicorn http server. It's an asynchronous server
-# pip install fastapi
+# pip install "fastapi[standard]"
 # pip install "uvicorn[standard]"
 
 # Run the server with:
